@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 50%;
+    margin: 0 auto;
+    color: rgb(255, 255, 255);
+    margin-top: 100px;
+
+    & h1 {
+        margin-bottom: 20px;
+
+    }
+}
+
+.accordion {
+    background-color: rgb(225, 221, 221);
+    border-radius: 5px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.item {
+    padding: 1rem;
+    text-align: left;
+    background-color: rgb(171, 132, 34);
+}
+
+.title {
+    display: flex;
+    gap: 12px;
+}
+
+.btn{
+    margin-top: 10px;
+    background-color: tomato;
+    padding: 1rem 0.5rem;
+    width:200px;
+    border: none;
+    cursor: pointer;
+
+    &:hover{
+        background-color: rgb(224, 86, 61);
+    }
+}
