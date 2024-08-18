@@ -5,11 +5,29 @@ import "./style.css"
 export const Accordion = () => {
 
     const [selected, setSelected] = useState(null)
+    const [multiSelect, setMultiSelect] = useState(false)
+    const [multiple, setMultiple] = useState([])
 
     const handleSingleSelection = (id) => {
         setSelected(id === selected ? null : id)
-        console.log(id)
+        // console.log(id)
     }
+
+    const handelMultiSelection = (id) => {
+        let copyMultiple = [...multiple]
+        const findIndexofCrrId = copyMultiple.indexOf(id)
+        if (findIndexofCrrId === -1) {
+            copyMultiple.push(id)
+        }
+        else {
+            copyMultiple.splice(findIndexofCrrId, 1)
+        }
+
+        setMultiple(copyMultiple)
+        console.log(copyMultiple);
+    }
+
+
 
 
     return (
@@ -21,12 +39,21 @@ export const Accordion = () => {
                     data && data.length > 0 ?
                         data.map((item, index) => {
                             return <div key={item.id} className="item">
-                                <div onClick={() => handleSingleSelection(item.id)} className="title">
+                                <div onClick={
+                                    multiSelect
+                                        ? () => handelMultiSelection(item.id)
+                                        : () => handleSingleSelection(item.id)
+                                }
+                                    className="title">
                                     <h3>{item.question}</h3>
                                     <span>+</span>
                                 </div>
                                 {
-                                    selected === item.id ? <div className="content"> {item.answer}</div> : null                            
+                                    multiSelect
+                                        ? multiple.indexOf(item.id) !== -1 &&
+                                        <div className="content"> {item.answer}</div>
+                                        : selected === item.id &&
+                                        <div className="content"> {item.answer}</div>
                                 }
                             </div>
                         })
@@ -34,7 +61,7 @@ export const Accordion = () => {
                         <p>No data Found</p>
                 }
 
-                <button className="btn">Select All</button>
+                <button onClick={() => setMultiSelect(!multiSelect)} className="btn">Select All</button>
 
             </div>
 
