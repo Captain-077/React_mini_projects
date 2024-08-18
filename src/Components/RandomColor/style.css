@@ -1,0 +1,26 @@
+button{
+    padding: 1rem;
+    width:200px;
+    border: none;
+    cursor: pointer;
+    &:hover{
+        background-color: grey;        
+    }
+    &:active{
+        scale:0.98;
+    }
+}
+
+.wrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}

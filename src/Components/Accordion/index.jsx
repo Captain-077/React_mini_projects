@@ -31,7 +31,7 @@ export const Accordion = () => {
 
 
     return (
-        <div className="wrapper">
+        <div className="Wrapper">
             <h1>Accordion</h1>
 
             <div className="accordion">
