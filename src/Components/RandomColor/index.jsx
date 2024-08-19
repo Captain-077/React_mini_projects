@@ -25,7 +25,7 @@ export const RandomcolorGenerator = () => {
         const g = randomColorUtility(256);
         const b = randomColorUtility(256);
         // let rgb = r+g+b;
-        console.log(`rgb(${r}, ${g}, ${b})`) 
+        console.log(`rgb(${r}, ${g}, ${b})`)
         setColor(`rgb(${r}, ${g}, ${b})`)
     }
 
@@ -40,6 +40,12 @@ export const RandomcolorGenerator = () => {
                 <button onClick={() => setTypeOfColor("hex")}>Create Hex color</button>
                 <button onClick={() => setTypeOfColor("rgb")}>Create RGB color</button>
                 <button onClick={typeofColor === "hex" ? handleHexColor : handleRgbColor}>Generate Random color</button>
+            </div>
+            <div className="text-container">
+                {typeofColor === "hex"
+                    ? <h2>Hex color {color}</h2>
+                    : <h2>RGB color {color}</h2>
+                }
             </div>
         </div>
     )

@@ -24,3 +24,13 @@ button{
     align-items: center;
     gap: 10px;
 }
+
+.text-container{
+margin-top: 100px;  
+padding: 10px 0;
+width:30%;
+height: auto;
+text-align: center;
+background-color: #202020;
+border-radius: 15px;
+}
