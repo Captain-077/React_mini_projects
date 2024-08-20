@@ -21,7 +21,7 @@ export const RandomcolorGenerator = () => {
     }
 
     const handleRgbColor = () => {
-        const r = randomColorUtility(256);
+        const r = randomColorUtility(256);jfbkjfdmn fdnf ddfd
         const g = randomColorUtility(256);
         const b = randomColorUtility(256);
         // let rgb = r+g+b;
